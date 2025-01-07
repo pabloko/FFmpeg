@@ -113,7 +113,12 @@ public:
     }
     virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, LPVOID *ppv) 
     {
-        if (iid == IID_IDeckLinkVideoFrame_v14_2_1) { *ppv = (IDeckLinkVideoFrame_v14_2_1*)this; AddRef(); return S_OK; }
+        if (iid == IID_IDeckLinkVideoFrame_v14_2_1) 
+        { 
+            *ppv = (IDeckLinkVideoFrame_v14_2_1*)this; 
+            AddRef(); 
+            return S_OK; 
+        }
         return E_NOINTERFACE; 
     }
     virtual ULONG   STDMETHODCALLTYPE AddRef(void)                            { return ++_refs; }
@@ -164,8 +169,13 @@ public:
     }
     virtual HRESULT STDMETHODCALLTYPE ScheduledPlaybackHasStopped(void)       { return S_OK; }
     virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, LPVOID *ppv)
-	{
-        if (iid == IID_IDeckLinkVideoOutputCallback_v14_2_1) { *ppv = (IDeckLinkVideoOutputCallback_v14_2_1*)this; AddRef(); return S_OK; }
+    {
+        if (iid == IID_IDeckLinkVideoOutputCallback_v14_2_1) 
+        { 
+            *ppv = (IDeckLinkVideoOutputCallback_v14_2_1*)this; 
+            AddRef(); 
+            return S_OK; 
+        }
         return E_NOINTERFACE; 
     }
     virtual ULONG   STDMETHODCALLTYPE AddRef(void)                            { return 1; }

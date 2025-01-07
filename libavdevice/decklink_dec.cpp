@@ -131,7 +131,11 @@ public:
         // IUnknown methods
         virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, LPVOID *ppv) 
         {
-            if (iid == IID_IDeckLinkMemoryAllocator_v14_2_1) { *ppv = (IDeckLinkMemoryAllocator_v14_2_1*)this; AddRef(); return S_OK; }
+            if (iid == IID_IDeckLinkMemoryAllocator_v14_2_1) { 
+                *ppv = (IDeckLinkMemoryAllocator_v14_2_1*)this; 
+                AddRef(); 
+                return S_OK; 
+            }
             return E_NOINTERFACE; 
         }
         virtual ULONG   STDMETHODCALLTYPE AddRef(void) { return ++_refs; }
@@ -585,8 +589,12 @@ public:
         ~decklink_input_callback();
 
         virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, LPVOID *ppv)
-		{
-            if (iid == IID_IDeckLinkInputCallback_v14_2_1) { *ppv = (IDeckLinkInputCallback_v14_2_1*)this; AddRef(); return S_OK; }
+        {
+            if (iid == IID_IDeckLinkInputCallback_v14_2_1) {
+                *ppv = (IDeckLinkInputCallback_v14_2_1*)this;
+                AddRef();
+                return S_OK;
+            }
             return E_NOINTERFACE; 
         }
         virtual ULONG STDMETHODCALLTYPE AddRef(void);
